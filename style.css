@@ -24,7 +24,7 @@ h1 {
     text-align: center;
     margin: 100px auto 50px;
     font-weight: 600;
-    animation: fadeIn 1s ease-in; /* Apply fade-in animation */
+    animation: fadeIn 2s ease-in; /* Apply fade-in animation */
 }
 
 form {
@@ -35,7 +35,6 @@ form {
     background: #434989;
     display: flex;
     align-items: center;
-    border-radius: 8px;
 
     /* Smooth pop-up animation */
     animation: popUp 0.6s ease-out forwards; /* Apply pop-up animation */
@@ -61,6 +60,7 @@ form input {
     color: #fff;
     font-size: 18px;
     padding: 0 30px;
+
 }
 
 form button {
@@ -74,6 +74,7 @@ form button {
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     cursor: pointer;
+
 }
 
 ::placeholder {
@@ -111,4 +112,48 @@ form button {
    height :230px; 
    object-fit :cover; 
    border-radius :5px; 
+}
+
+/* Responsive Styles */
+
+/* For tablets and smaller devices */
+@media (max-width: 1024px) {
+    
+   #search-result {
+       grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+   }
+
+   form {
+       flex-direction: column; /* Stack input and button vertically */
+       height:auto; /* Allow height to adjust based on content */
+       padding-bottom:10px; /* Add some space at the bottom */
+   }
+
+   form input, form button {
+       width: calc(100% - 20px); /* Full width with some margin */
+       margin-bottom:10px; /* Space between input and button */
+       padding-left:10px; /* Adjust padding for better appearance */
+       padding-right:10px; /* Adjust padding for better appearance */
+   }
+}
+
+/* For mobile devices */
+@media (max-width: 600px) {
+
+   h1 {
+       font-size: 24px; /* Smaller heading on mobile */
+       margin-top: 50px; /* Reduced top margin for mobile view */
+       margin-bottom: 30px; /* Reduced bottom margin for mobile view */
+   }
+
+   #search-result {
+       grid-template-columns: repeat(1, 1fr); /* Single column for mobile */
+       grid-gap :20px; /* Reduced gap between images */
+   }
+
+   form input, form button {
+       width: calc(100% - 20px); /* Full width with some margin */
+       padding-left:15px; /* Adjust padding for better appearance */
+       padding-right:15px; /* Adjust padding for better appearance */
+   }
 }
